@@ -13,8 +13,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "tb_funcionarios")
 public class Funcionarios {
@@ -39,4 +37,57 @@ public class Funcionarios {
 	@ManyToOne
 	@JsonIgnoreProperties("Funcionarios")
 	private Departamentos departamento;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Float getSalario() {
+		return salario;
+	}
+
+	public void setSalario(Float salario) {
+		this.salario = salario;
+	}
+
+	public String getData_admissao() {
+		return data_admissao;
+	}
+
+	public void setData_admissao(String data_admissao) {
+		this.data_admissao = data_admissao;
+	}
+
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+
+	public Departamentos getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamentos departamento) {
+		this.departamento = departamento;
+	}
+
+	
+	
+	
+	
 }

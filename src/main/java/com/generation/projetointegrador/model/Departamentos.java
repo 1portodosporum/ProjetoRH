@@ -18,8 +18,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter 
 @Table(name = "tb_departamentos")
 public class Departamentos {
 	
@@ -34,6 +32,30 @@ public class Departamentos {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "departamento", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("funcionario")
 	private List<Funcionarios> funcionario;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome_departamento() {
+		return nome_departamento;
+	}
+
+	public void setNome_departamento(String nome_departamento) {
+		this.nome_departamento = nome_departamento;
+	}
+
+	public List<Funcionarios> getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(List<Funcionarios> funcionario) {
+		this.funcionario = funcionario;
+	}
 	
 	
 	

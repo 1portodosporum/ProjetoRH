@@ -26,7 +26,7 @@ public class Departamentos {
 	
 	@NotBlank(message = "O nome é obrigatório")
 	@Size(min = 2, max = 30, message = "O departamento deve conter pelo menos 2 letras e o máximo de 30 caracteres")
-	private String nome_departamento;
+	private String nome;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "departamento", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("funcionario")
@@ -41,11 +41,11 @@ public class Departamentos {
 	}
 
 	public String getNome_departamento() {
-		return nome_departamento;
+		return nome;
 	}
 
-	public void setNome_departamento(String nome_departamento) {
-		this.nome_departamento = nome_departamento;
+	public void setNome_departamento(String nome) {
+		this.nome = nome;
 	}
 
 	public List<Funcionarios> getFuncionario() {

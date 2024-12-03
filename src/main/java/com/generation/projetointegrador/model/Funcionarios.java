@@ -24,7 +24,7 @@ public class Funcionarios {
 	@Size(min = 3, max = 70, message = "O nome deve conter pelo menos 3 letras e o máximo de 70 caracteres")
 	private String nome;
 	
-	@NotBlank(message = "O salário é obrigatório")
+	// @NotBlank(message = "O salário é obrigatório")
 	private Float salario;
 	
 	@NotBlank(message = "A data de admissão é obrigatório")
@@ -34,7 +34,7 @@ public class Funcionarios {
 	private String cargo;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("Funcionarios")
+	@JsonIgnoreProperties("funcionario")
 	private Departamentos departamento;
 
 	public Long getId() {

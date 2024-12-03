@@ -20,7 +20,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.generation.projetointegrador.model.Departamentos;
-import com.generation.projetointegrador.model.Funcionarios;
 import com.generation.projetointegrador.repository.DepartamentosRepository;
 
 import jakarta.validation.Valid;
@@ -45,10 +44,10 @@ public class DepartamentoController {
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 
-	@GetMapping("/nome/{nome}")
-	public ResponseEntity<List<Departamentos>> getByNome(@PathVariable String nome) {
-		return ResponseEntity.ok(departamentoRepository.findAllByNomeContainingIgnoreCase(nome));
-	}
+	// @GetMapping("/nome/{nome}")
+	// public ResponseEntity<List<Departamentos>> getByNome(@PathVariable String nome) {
+	// 	return ResponseEntity.ok(departamentoRepository.findAllByNomeContainingIgnoreCase(nome));
+	// }
 
 	@PostMapping
 	public ResponseEntity<Departamentos> post(@Valid @RequestBody Departamentos departamentos) {
